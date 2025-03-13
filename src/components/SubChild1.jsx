@@ -6,7 +6,7 @@ const SubChild1 = () => {
     const dispatch = useDispatch()
     const data = useSelector((d)=>{
         
-console.log(d)
+console.log(d.show)
 return d.show.value
     })
     return (
