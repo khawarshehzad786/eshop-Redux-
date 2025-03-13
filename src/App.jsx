@@ -1,8 +1,11 @@
 import React from 'react'
+import SubChild1 from './components/SubChild1'
 
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <SubChild1/>
+    </div>
   )
 }
 
