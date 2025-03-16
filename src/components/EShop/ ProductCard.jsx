@@ -19,7 +19,7 @@ export default function  ProductCard() {
   const dispatch = useDispatch();
 
   return (
-    <div className="m-2">
+    <div className="maindivsection p-2">
       <MDBContainer>
         <MDBRow className="mb-3">
           {items?.map((item) => (
