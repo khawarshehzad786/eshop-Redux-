@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./App.css";
+import "./index.css";
 import Navbar from "./components/EShop/Navbar";
 import ProductCard from "./components/EShop/ ProductCard";
 import CartSection from "./components/EShop/CartSection";
