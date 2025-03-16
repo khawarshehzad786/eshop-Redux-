@@ -1,52 +1,35 @@
-import React, { useState } from 'react';
+// import React, { useEffect } from "react";
 import {
   MDBContainer,
   MDBNavbar,
   MDBNavbarBrand,
-  MDBNavbarToggler,
-  MDBIcon,
-  MDBNavbarNav,
-  MDBNavbarItem,
-  MDBNavbarLink,
   MDBBtn,
-  MDBDropdown,
-  MDBDropdownToggle,
-  MDBDropdownMenu,
-  MDBDropdownItem,
-  MDBCollapse,
-} from 'mdb-react-ui-kit';
+} from "mdb-react-ui-kit";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getCartTotal } from "../../features/cartSlice";
+import { useEffect } from "react";
 
-export default function Navbar() {
-  const [openBasic, setOpenBasic] = useState(false);
+// import { getCartTotal } from "../features/cartSlice";
+
+export default function App() {
+  const { cart, totalQuantity } = useSelector((state) => state.allCart);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getCartTotal());
+  }, [cart]);
 
   return (
-    <MDBNavbar expand='lg' light bgColor='light'>
+    <MDBNavbar light bgColor="light">
       <MDBContainer fluid>
-        <MDBNavbarBrand href='#'>Brand</MDBNavbarBrand>
-
-        <MDBNavbarToggler
-          aria-controls='navbarSupportedContent'
-          aria-expanded='false'
-          aria-label='Toggle navigation'
-          onClick={() => setOpenBasic(!openBasic)}
-        >
-          <MDBIcon icon='bars' fas />
-        </MDBNavbarToggler>
-
-        <MDBCollapse navbar open={openBasic} style={{display:"flex",justifyContent:"end",alignItems:"end"}}>
-          <MDBNavbarNav  className=''>
-            <MDBNavbarItem>
-              <MDBNavbarLink active aria-current='page' href='#'>
-                Home
-              </MDBNavbarLink>
-            </MDBNavbarItem>
-            <MDBNavbarItem>
-              <MDBNavbarLink href='#'>Link</MDBNavbarLink>
-            </MDBNavbarItem>
-          </MDBNavbarNav>
-
-        
-        </MDBCollapse>
+        <MDBNavbarBrand>Navbar</MDBNavbarBrand>
+        <span>
+          <Link to="/">All Product </Link>
+        </span>
+        <MDBBtn color="secondary">
+          <Link to="/cart">Cart({totalQuantity})</Link>
+        </MDBBtn>
       </MDBContainer>
     </MDBNavbar>
   );
