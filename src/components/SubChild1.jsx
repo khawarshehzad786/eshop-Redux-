@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { decrement, increment, incrementbyvalu } from '../features/counter/counterSlice'
+import { decrement, increment, incrementbyvalu } from '../features/counterSlice'
 
 const SubChild1 = () => {
     const dispatch = useDispatch()
