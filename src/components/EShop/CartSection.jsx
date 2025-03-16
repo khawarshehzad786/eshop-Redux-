@@ -4,9 +4,9 @@ import { useSelector, useDispatch } from "react-redux";
 
 import {
   getCartTotal,
-//   removeItem,
-//   decreaseItemQuantity,
-//   increaseItemQuantity,
+  removeItem,
+  decreaseItemQuantity,
+  increaseItemQuantity,
 } from "../../features/cartSlice";
 
 const CartPage = () => {
@@ -56,7 +56,7 @@ const CartPage = () => {
                           className="btn btn-primary btn-sm me-1 mb-2"
                           data-mdb-toggle="tooltip"
                           title="Remove item"
-                        //   onClick={() => dispatch(removeItem(data.id))}
+                          onClick={() => dispatch(removeItem(data.id))}
                         >
                           <i className="fas fa-trash"></i>
                         </button>
@@ -69,7 +69,7 @@ const CartPage = () => {
                         >
                           <button
                             className="btn btn-primary px-3 me-2"
-                            // onClick={() =>  dispatch(decreaseItemQuantity(data.id))}
+                            onClick={() =>  dispatch(decreaseItemQuantity(data.id))}
                           >
                             <i className="fas fa-minus"></i>
                           </button>
@@ -91,7 +91,7 @@ const CartPage = () => {
 
                           <button
                             className="btn btn-primary px-3 ms-2"
-                            // onClick={() => dispatch(increaseItemQuantity(data.id))}
+                            onClick={() => dispatch(increaseItemQuantity(data.id))}
                           >
                             <i className="fas fa-plus"></i>
                           </button>
