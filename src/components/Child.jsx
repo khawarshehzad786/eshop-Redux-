@@ -7,7 +7,8 @@ const Child = () => {
     })
   return (
     <>
-    <h1>the value is:{data} </h1>
+    
+    <p>the value is:{data} </p>
     </>
   )
 }
